@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyba Dessert Studio | Handcrafted Moments in Brooklyn</title>
+    <meta name="description" content="Skyba Dessert Studio. Where every dessert tells a story of craftsmanship, love, and Ukrainian heritage.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        :root {
+            --mauve: #AC7288;
+            --mauve-dark: #8B5A6D;
+            --mauve-light: #A78BA8;
+            --cream: #F2DDC9;
+            --ivory: #FAF7F4;
+            --black: #1A1A1A;
+            --gray: #8B8B8B;
+            --border: #E8DDD5;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--ivory);
+            color: var(--black);
+            line-height: 1.7;
+            letter-spacing: -0.3px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* UTILITY */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .container-narrow {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container,
+            .container-narrow {
+                padding: 0 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container,
+            .container-narrow {
+                padding: 0 16px;
+            }
+        }
+
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInSlowly {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* HERO */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            background: var(--ivory);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 60px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .hero-logo svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.05));
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 700px;
+            animation: fadeInUp 1.4s ease-out 0.2s both;
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--black);
+            margin-bottom: 32px;
+            letter-spacing: -2px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--mauve);
+        }
+
+        .hero-supporting {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 60px;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.2px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1.6s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 14px 40px;
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--mauve);
+            color: white;
+            border: 2px solid var(--mauve);
+        }
+
+        .btn-primary:hover {
+            background: var(--mauve-dark);
+            border-color: var(--mauve-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--mauve);
+            border: 2px solid var(--mauve);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cream);
+            border-color: var(--mauve);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 80px 24px;
+            }
+
+            .hero-headline {
+                font-size: 3rem;
+            }
+
+            .hero-logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 48px;
+            }
+
+            .hero-supporting {
+                font-size: 1rem;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* STORY SECTION */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .story {
+            padding: 120px 40px;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .story-image {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--mauve-light) 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: rgba(255,255,255,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .story-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.03) 100%);
+        }
+
+        .story-text h2 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--black);
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        .story-text p {
+            font-size: 1.05rem;
+            color: var(--gray);
+            margin-bottom: 28px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+        }
+
+        .story-text p:first-of-type {
+            font-size: 1.1rem;
+            color: var(--black);
+        }
+
+        .story-highlight {
+            padding: 32px;
+            background: var(--cream);
+            border-left: 4px solid var(--mauve);
+            margin: 48px 0;
+            font-style: italic;
+            color: var(--black);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .story {
+                padding: 80px 24px;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .story-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .story-image {
+                aspect-ratio: 1;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* CRAFT SECTION */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .craft {
+            padding: 120px 40px;
+            background: var(--ivory);
+            border-top: 1px solid var(--border);
+        }
+
+        .craft-intro {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .craft-intro h2 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 32px;
+            letter-spacing: -1px;
+        }
+
+        .craft-intro p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+        }
+
+        .craft-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .craft-item {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .craft-item:nth-child(1) { animation-delay: 0.1s; }
+        .craft-item:nth-child(2) { animation-delay: 0.2s; }
+        .craft-item:nth-child(3) { animation-delay: 0.3s; }
+
+        .craft-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--mauve);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .craft-item p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.8;
+            letter-spacing: 0.2px;
+        }
+
+        @media (max-width: 768px) {
+            .craft {
+                padding: 80px 24px;
+            }
+
+            .craft-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .craft-intro h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* COLLECTIONS */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .collections {
+            padding: 120px 40px;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        .collections-header {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .collections-header h2 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .collections-header p {
+            font-size: 1rem;
+            color: var(--gray);
+            letter-spacing: 0.3px;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .collection-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--mauve-light) 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .collection-card:nth-child(1) { animation-delay: 0.1s; }
+        .collection-card:nth-child(2) { animation-delay: 0.2s; }
+        .collection-card:nth-child(3) { animation-delay: 0.3s; }
+        .collection-card:nth-child(4) { animation-delay: 0.4s; }
+        .collection-card:nth-child(5) { animation-delay: 0.5s; }
+        .collection-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .collection-card:hover {
+            transform: scale(1.02);
+        }
+
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.05) 100%);
+            pointer-events: none;
+        }
+
+        .collection-label {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .collections {
+                padding: 80px 24px;
+            }
+
+            .collections-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .collections-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* WHY SKYBA */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .why-skyba {
+            padding: 120px 40px;
+            background: var(--ivory);
+            border-top: 1px solid var(--border);
+        }
+
+        .why-skyba-intro {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .why-skyba-intro h2 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 32px;
+            letter-spacing: -1px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .why-item:nth-child(1) { animation-delay: 0.1s; }
+        .why-item:nth-child(2) { animation-delay: 0.2s; }
+        .why-item:nth-child(3) { animation-delay: 0.3s; }
+        .why-item:nth-child(4) { animation-delay: 0.4s; }
+        .why-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .why-icon {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+
+        .why-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .why-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.7;
+            letter-spacing: 0.2px;
+        }
+
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .why-skyba {
+                padding: 80px 24px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .why-skyba-intro h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* MOMENTS */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .moments {
+            padding: 120px 40px;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        .moments-header {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .moments-header h2 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .moment-card {
+            padding: 48px;
+            background: var(--ivory);
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .moment-card:nth-child(1) { animation-delay: 0.1s; }
+        .moment-card:nth-child(2) { animation-delay: 0.2s; }
+        .moment-card:nth-child(3) { animation-delay: 0.3s; }
+        .moment-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .moment-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--mauve);
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .moment-text {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            letter-spacing: 0.2px;
+        }
+
+        .moment-signature {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--black);
+        }
+
+        @media (max-width: 768px) {
+            .moments {
+                padding: 80px 24px;
+            }
+
+            .moments-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .moments-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .moment-card {
+                padding: 32px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* FUTURE CAFE */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .future {
+            padding: 120px 40px;
+            background: var(--ivory);
+            border-top: 1px solid var(--border);
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .future-text h2 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--black);
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        .future-text p {
+            font-size: 1.05rem;
+            color: var(--gray);
+            margin-bottom: 28px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+        }
+
+        .future-image {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--mauve-light) 0%, var(--cream) 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: rgba(255,255,255,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .future-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.03) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .future {
+                padding: 80px 24px;
+            }
+
+            .future-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .future-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .future-image {
+                order: -1;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* INSTAGRAM */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .instagram {
+            padding: 80px 40px;
+            background: white;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .instagram h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .instagram p {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 32px;
+            letter-spacing: 0.3px;
+        }
+
+        .instagram-handle {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--mauve);
+            margin-bottom: 32px;
+        }
+
+        .instagram-btn {
+            display: inline-block;
+            padding: 12px 36px;
+            background: transparent;
+            border: 2px solid var(--mauve);
+            color: var(--mauve);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .instagram-btn:hover {
+            background: var(--cream);
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* CONTACT */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        .contact {
+            padding: 120px 40px;
+            background: var(--ivory);
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .contact-header h2 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+        }
+
+        .contact-item {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .contact-item:nth-child(1) { animation-delay: 0.1s; }
+        .contact-item:nth-child(2) { animation-delay: 0.2s; }
+        .contact-item:nth-child(3) { animation-delay: 0.3s; }
+        .contact-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .contact-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .contact-item p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+            letter-spacing: 0.2px;
+        }
+
+        .contact-item a {
+            display: inline-block;
+            color: var(--mauve);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.2px;
+        }
+
+        .contact-item a:hover {
+            color: var(--mauve-dark);
+        }
+
+        .contact-hours {
+            background: white;
+            padding: 24px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-hours p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact {
+                padding: 80px 24px;
+            }
+
+            .contact-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* FOOTER */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        footer {
+            background: var(--black);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            margin: 8px 0;
+            letter-spacing: 0.3px;
+        }
+
+        footer a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--mauve);
+        }
+
+        .footer-links {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-links a {
+            display: inline-block;
+            margin: 0 16px;
+            font-size: 0.85rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* REDUCED MOTION SUPPORT */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- HERO -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-logo">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="95" fill="#FEFEFE" stroke="#AC7288" stroke-width="2"/>
+                <path d="M 100 50 Q 120 80 110 120 Q 100 140 100 140 Q 100 140 90 120 Q 80 80 100 50" fill="#AC7288" opacity="0.8"/>
+                <circle cx="85" cy="90" r="6" fill="#AC7288"/>
+                <circle cx="115" cy="90" r="6" fill="#AC7288"/>
+                <text x="100" y="165" font-family="Cormorant Garamond, serif" font-size="16" font-weight="600" text-anchor="middle" fill="#AC7288">Skyba</text>
+            </svg>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-headline">
+                Every dessert is a <em>moment</em> of love
+            </h1>
+            <p class="hero-supporting">
+                Handcrafted in Brooklyn by pastry chef Anna Skyba and her family. We believe the finest desserts are made with time, care, and Ukrainian soul.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Order Now</a>
+                <a href="#story" class="btn btn-secondary">Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- STORY -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="story" id="story">
+        <div class="story-grid">
+            <div class="story-image">🎂</div>
+            <div class="story-text">
+                <h2>Where Ukraine meets Brooklyn</h2>
+                <p>
+                    Anna Skyba grew up in Kyiv learning the art of pastry from her grandmother—techniques passed down through generations, recipes written in flour dust and memory. In 2019, she brought that knowledge to Brooklyn.
+                </p>
+                <p>
+                    Today, with her partner Taras, she crafts each dessert by hand. No shortcuts. No industrial processes. Every torte, every petit four, every macaron is made fresh because that's how it should taste.
+                </p>
+                <div class="story-highlight">
+                    "Про любов у кожній деталі" — In every detail, love.
+                </div>
+                <p>
+                    Skyba Dessert Studio is not a bakery. It's an atelier. A place where craftsmanship is not negotiable and time is never rushed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- CRAFT -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="craft">
+        <div class="craft-intro">
+            <h2>How we create</h2>
+            <p>
+                Three things guide every creation: Ukrainian heritage, European technique, and an obsession with quality.
+            </p>
+        </div>
+
+        <div class="craft-grid">
+            <div class="craft-item">
+                <h3>Ingredients</h3>
+                <p>
+                    We source from Europe's finest producers. Belgian chocolate. French butter. Italian flour. Because what goes inside matters as much as how it looks.
+                </p>
+            </div>
+            <div class="craft-item">
+                <h3>Technique</h3>
+                <p>
+                    Every dessert is made from scratch. Pâte à choux. Génoise. Mousse. Not recipes. Disciplines. Learned over years, practiced with intention.
+                </p>
+            </div>
+            <div class="craft-item">
+                <h3>Time</h3>
+                <p>
+                    You cannot rush a good dessert. Some cakes rest overnight. Some flavors need three days. We wait for perfect because that's what you deserve.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- COLLECTIONS -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="collections">
+        <div class="collections-header">
+            <h2>Our Collections</h2>
+            <p>
+                Each collection represents a different philosophy, technique, and moment in time. Browse to find your celebration.
+            </p>
+        </div>
+
+        <div class="collections-grid">
+            <div class="collection-card">
+                <div class="collection-label">Бісквітні</div>
+            </div>
+            <div class="collection-card">
+                <div class="collection-label">Мусові</div>
+            </div>
+            <div class="collection-card">
+                <div class="collection-label">Листкові</div>
+            </div>
+            <div class="collection-card">
+                <div class="collection-label">Пісні</div>
+            </div>
+            <div class="collection-card">
+                <div class="collection-label">Класичні</div>
+            </div>
+            <div class="collection-card">
+                <div class="collection-label">Спеціальні</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- WHY SKYBA -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="why-skyba">
+        <div class="why-skyba-intro">
+            <h2>Why choose Skyba</h2>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">✨</div>
+                <h3>Artisan Made</h3>
+                <p>
+                    Every dessert handcrafted by Anna. Personal attention. No production line.
+                </p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">🥕</div>
+                <h3>Premium Quality</h3>
+                <p>
+                    European ingredients sourced with intention. No compromise.
+                </p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">❤️</div>
+                <h3>Made with Love</h3>
+                <p>
+                    Every detail reflects care, heritage, and passion for the craft.
+                </p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">⚡</div>
+                <h3>Fresh Delivery</h3>
+                <p>
+                    Made to order. Delivered fresh. Sheepshead Bay and nearby.
+                </p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">🇺🇦</div>
+                <h3>Heritage</h3>
+                <p>
+                    Ukrainian roots. Brooklyn soul. Global ingredients.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- MOMENTS -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="moments">
+        <div class="moments-header">
+            <h2>Celebrations</h2>
+            <p>
+                These are the moments Skyba desserts have been part of.
+            </p>
+        </div>
+
+        <div class="moments-grid">
+            <div class="moment-card">
+                <div class="moment-title">A Wedding</div>
+                <p class="moment-text">
+                    "We wanted something that felt us—elegant but warm, sophisticated but not pretentious. Anna understood immediately. The cake wasn't just beautiful. It tasted like love."
+                </p>
+                <div class="moment-signature">Sarah & Michael, June 2024</div>
+            </div>
+
+            <div class="moment-card">
+                <div class="moment-title">A Birthday</div>
+                <p class="moment-text">
+                    "My daughter asked for something 'special.' We didn't know what that meant, but Anna delivered. The dessert was a conversation starter. And it was gone in minutes."
+                </p>
+                <div class="moment-signature">Rebecca, July 2024</div>
+            </div>
+
+            <div class="moment-card">
+                <div class="moment-title">A Corporate Event</div>
+                <p class="moment-text">
+                    "We needed desserts for 50 people. Skyba didn't just deliver quantity. Each piece was an individual work of art. Our clients noticed. And they still ask about it."
+                </p>
+                <div class="moment-signature">David, Chief Event Coordinator</div>
+            </div>
+
+            <div class="moment-card">
+                <div class="moment-title">An Anniversary</div>
+                <p class="moment-text">
+                    "Thirty years together. We wanted something Ukrainian—something that honored where we came from. Anna made a dessert that tasted like memory. Like home. Like us."
+                </p>
+                <div class="moment-signature">Iryna & Vasyl, May 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- FUTURE CAFE -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="future">
+        <div class="future-grid">
+            <div class="future-text">
+                <h2>The café is coming</h2>
+                <p>
+                    Right now, we create desserts to order—delivered fresh to you. But Skyba has always dreamed of a space. A small café. Intimate. Thoughtful. A place where desserts are paired with specialty coffee, where every visit feels like an invitation into the Skyba home.
+                </p>
+                <p>
+                    Phase two is in development. We'll share more soon.
+                </p>
+            </div>
+            <div class="future-image">☕</div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- INSTAGRAM -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="instagram">
+        <h2>Follow Our Work</h2>
+        <p>Real desserts. Real moments. Behind the scenes.</p>
+        <div class="instagram-handle">@skybadessertstudio</div>
+        <a href="https://www.instagram.com/skybadessertstudio/" target="_blank" class="instagram-btn">
+            View on Instagram
+        </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- CONTACT -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Let's celebrate together</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Call</h3>
+                    <p>For questions & custom orders</p>
+                    <a href="tel:+1(929)888-2233">+1 (929) 888-2233</a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>For consultations & inquiries</p>
+                    <a href="mailto:skybadessert@gmail.com">skybadessert@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Instagram</h3>
+                    <p>See our latest creations</p>
+                    <a href="https://www.instagram.com/skybadessertstudio/" target="_blank">@skybadessertstudio</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-hours">
+                        <h3>Hours</h3>
+                        <p>Mon–Fri: 9am–8pm</p>
+                        <p>Sat–Sun: 10am–8pm</p>
+                        <p style="margin-top: 16px; font-size: 0.85rem; color: var(--gray);">
+                            Sheepshead Bay, Brooklyn
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <footer>
+        <p>&copy; 2026 Skyba Dessert Studio. All rights reserved.</p>
+        <p>Handcrafted in Brooklyn with 💜 by the Skyba family.</p>
+        <p>Phase 1: Luxury dessert delivery | Phase 2: Intimate café (coming)</p>
+        <div class="footer-links">
+            <a href="https://www.facebook.com/SolodkoSmachno/" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/skybadessertstudio/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>
