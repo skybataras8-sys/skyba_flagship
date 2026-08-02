@@ -177,7 +177,7 @@
             border-radius: 2px;
             text-decoration: none;
             transition: all 0.3s ease;
-            cursor: pointer;
+            cursor: default;
             border: none;
             letter-spacing: 0.5px;
         }
@@ -438,12 +438,9 @@
         }
 
         .collection-card {
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--mauve-light) 100%);
+            aspect-ratio: 4 / 5;
+            background: var(--cream);
             border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
             overflow: hidden;
             cursor: pointer;
@@ -463,23 +460,17 @@
             transform: scale(1.02);
         }
 
-        .collection-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.05) 100%);
-            pointer-events: none;
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
         }
 
-        .collection-label {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.4);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            letter-spacing: -0.5px;
+        .collection-card:hover img {
+            transform: scale(1.04);
         }
 
         @media (max-width: 768px) {
@@ -1074,24 +1065,15 @@
         </div>
 
         <div class="collections-grid">
-            <div class="collection-card">
-                <div class="collection-label">Бісквітні</div>
-            </div>
-            <div class="collection-card">
-                <div class="collection-label">Мусові</div>
-            </div>
-            <div class="collection-card">
-                <div class="collection-label">Листкові</div>
-            </div>
-            <div class="collection-card">
-                <div class="collection-label">Пісні</div>
-            </div>
-            <div class="collection-card">
-                <div class="collection-label">Класичні</div>
-            </div>
-            <div class="collection-card">
-                <div class="collection-label">Спеціальні</div>
-            </div>
+            <figure class="collection-card">
+                <img src="image.png" alt="Авторський двоярусний торт Skyba Dessert Studio">
+            </figure>
+            <figure class="collection-card">
+                <img src="image (2).png" alt="Заварні десерти з кремом та начинкою">
+            </figure>
+            <figure class="collection-card">
+                <img src="image (1).png" alt="Авторський рожевий торт Skyba Dessert Studio">
+            </figure>
         </div>
     </section>
 
