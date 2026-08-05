@@ -974,9 +974,44 @@
                 scroll-behavior: auto !important;
             }
         }
+    
+        /* Site status notice */
+        .site-status {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 11px 20px;
+            background: var(--mauve-dark);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            padding-top: 39px;
+        }
+
+        @media (max-width: 480px) {
+            .site-status {
+                padding: 10px 14px;
+                font-size: 0.7rem;
+            }
+
+            body {
+                padding-top: 49px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="site-status" role="status">This website is currently being updated and expanded.</div>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!-- HERO -->
