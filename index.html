@@ -505,6 +505,41 @@
         }
 
         /* ═══════════════════════════════════════════════════════════ */
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* CERTIFICATES */
+        /* ═══════════════════════════════════════════════════════════ */
+        .certificates { padding: 120px 40px; background: white; border-top: 1px solid var(--border); }
+        .certificates-inner { max-width: 1200px; margin: 0 auto; }
+        .certificates-header { max-width: 820px; margin: 0 auto 72px; text-align: center; }
+        .certificates-eyebrow { margin-bottom: 20px; color: var(--mauve); font-size: .75rem; font-weight: 600; letter-spacing: .18em; line-height: 1.5; }
+        .certificates-header h2 { margin-bottom: 28px; color: var(--black); font-family: var(--font-display); font-size: 3.5rem; font-weight: 600; letter-spacing: -1px; line-height: 1.2; }
+        .certificates-header p { color: var(--gray); font-size: 1.02rem; letter-spacing: .2px; line-height: 1.9; }
+        .certificate-carousel { position: relative; }
+        .certificate-viewport { overflow: hidden; padding: 8px 4px 18px; touch-action: pan-y; }
+        .certificate-track { display: flex; margin: 0 -12px; transition: transform .45s cubic-bezier(.22,.61,.36,1); will-change: transform; }
+        .certificate-slide { flex: 0 0 33.333%; min-width: 0; padding: 0 12px; }
+        .certificate-card { width: 100%; padding: 14px; overflow: hidden; background: var(--ivory); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 30px rgba(58,38,46,.07); cursor: zoom-in; transition: transform .3s ease, box-shadow .3s ease; }
+        .certificate-card img { display: block; width: 100%; height: auto; background: white; border-radius: 4px; object-fit: contain; }
+        .certificate-card:focus-visible, .certificate-arrow:focus-visible, .certificate-dot:focus-visible, .certificate-lightbox-close:focus-visible { outline: 2px solid var(--mauve); outline-offset: 4px; }
+        .certificate-arrow { position: absolute; top: 50%; z-index: 2; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; transform: translateY(-50%); border: 1px solid var(--border); border-radius: 50%; background: rgba(250,247,244,.96); color: var(--mauve-dark); box-shadow: 0 6px 20px rgba(58,38,46,.1); cursor: pointer; font-size: 1.2rem; transition: background .25s ease, opacity .25s ease, transform .25s ease; }
+        .certificate-arrow:hover { background: white; transform: translateY(-50%) scale(1.04); }
+        .certificate-arrow:disabled { opacity: .35; cursor: default; }
+        .certificate-arrow--prev { left: -22px; }
+        .certificate-arrow--next { right: -22px; }
+        .certificate-dots { display: flex; justify-content: center; gap: 9px; margin-top: 24px; }
+        .certificate-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: var(--border); cursor: pointer; transition: background .25s ease, transform .25s ease; }
+        .certificate-dot[aria-current="true"] { background: var(--mauve); transform: scale(1.25); }
+        .certificate-lightbox { position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center; padding: 32px; background: rgba(26,26,26,.84); opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
+        .certificate-lightbox.is-open { opacity: 1; visibility: visible; }
+        .certificate-lightbox-dialog { position: relative; max-width: min(92vw,980px); max-height: 90vh; }
+        .certificate-lightbox img { display: block; max-width: 100%; max-height: 90vh; width: auto; height: auto; margin: auto; border-radius: 6px; background: white; box-shadow: 0 22px 70px rgba(0,0,0,.32); object-fit: contain; }
+        .certificate-lightbox-close { position: absolute; top: -18px; right: -18px; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; background: white; color: var(--black); cursor: pointer; font-size: 1.35rem; line-height: 1; }
+        @media (hover:hover) { .certificate-card:hover { transform: translateY(-5px); box-shadow: 0 16px 38px rgba(58,38,46,.11); } }
+        @media (max-width:1024px) { .certificate-slide { flex-basis: 50%; } .certificate-arrow--prev { left: -14px; } .certificate-arrow--next { right: -14px; } }
+        @media (max-width:768px) { .certificates { padding: 80px 24px; } .certificates-header { margin-bottom: 52px; } .certificates-header h2 { font-size: 2.5rem; } .certificate-arrow { display: none; } }
+        @media (max-width:560px) { .certificate-slide { flex-basis: 100%; padding: 0 8px; } .certificate-track { margin: 0 -8px; } .certificate-lightbox { padding: 20px; } .certificate-lightbox-close { top: -14px; right: -8px; } }
+
         /* WHY SKYBA */
         /* ═══════════════════════════════════════════════════════════ */
 
@@ -1117,6 +1152,32 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- CERTIFICATES -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="certificates" aria-labelledby="certificates-heading">
+        <div class="certificates-inner">
+            <div class="certificates-header">
+                <p class="certificates-eyebrow">CRAFTED THROUGH CONTINUOUS LEARNING</p>
+                <h2 id="certificates-heading">Always Learning. Always Evolving.</h2>
+                <p>Anna is constantly refining her craft—studying new techniques, learning from leading pastry professionals, and expanding her knowledge of modern European confectionery. Every certificate reflects her commitment to growth, precision, and creating truly exceptional desserts.</p>
+            </div>
+            <div class="certificate-carousel" aria-roledescription="carousel" aria-label="Anna's pastry certificates">
+                <button class="certificate-arrow certificate-arrow--prev" type="button" aria-label="View previous certificate">&#8592;</button>
+                <div class="certificate-viewport"><div class="certificate-track" aria-live="polite"></div></div>
+                <button class="certificate-arrow certificate-arrow--next" type="button" aria-label="View next certificate">&#8594;</button>
+                <div class="certificate-dots" aria-label="Choose certificate slide"></div>
+            </div>
+        </div>
+    </section>
+    <div class="certificate-lightbox" role="dialog" aria-modal="true" aria-label="Certificate image viewer" aria-hidden="true">
+        <div class="certificate-lightbox-dialog">
+            <button class="certificate-lightbox-close" type="button" aria-label="Close certificate image">&times;</button>
+            <img src="" alt="">
+        </div>
+    </div>
+
     <!-- WHY SKYBA -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section class="why-skyba">
@@ -1293,6 +1354,136 @@
             <a href="https://www.instagram.com/skybadessertstudio/" target="_blank">Instagram</a>
         </div>
     </footer>
+
+
+    <script>
+        (() => {
+            const placeholder = (title, detail, number) => {
+                const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1400" viewBox="0 0 1000 1400">' +
+                    '<rect width="1000" height="1400" fill="#FAF7F4"/><rect x="55" y="55" width="890" height="1290" rx="8" fill="#FFF" stroke="#E8DDD5" stroke-width="4"/>' +
+                    '<rect x="82" y="82" width="836" height="1236" rx="4" fill="none" stroke="#AC7288" stroke-width="2"/>' +
+                    '<circle cx="500" cy="295" r="82" fill="#F2DDC9"/><path d="M455 295h90M500 250v90" stroke="#AC7288" stroke-width="8" stroke-linecap="round"/>' +
+                    '<text x="500" y="470" text-anchor="middle" fill="#8B5A6D" font-family="Georgia,serif" font-size="34" letter-spacing="8">CERTIFICATE</text>' +
+                    '<text x="500" y="545" text-anchor="middle" fill="#1A1A1A" font-family="Georgia,serif" font-size="52">' + title + '</text>' +
+                    '<line x1="260" y1="610" x2="740" y2="610" stroke="#E8DDD5" stroke-width="2"/>' +
+                    '<text x="500" y="700" text-anchor="middle" fill="#8B8B8B" font-family="Arial,sans-serif" font-size="25">' + detail + '</text>' +
+                    '<text x="500" y="760" text-anchor="middle" fill="#8B8B8B" font-family="Arial,sans-serif" font-size="22">Skyba Dessert Studio</text>' +
+                    '<circle cx="500" cy="1010" r="92" fill="#AC7288" opacity=".12"/><circle cx="500" cy="1010" r="70" fill="none" stroke="#AC7288" stroke-width="3"/>' +
+                    '<text x="500" y="1022" text-anchor="middle" fill="#8B5A6D" font-family="Georgia,serif" font-size="34">' + number + '</text>' +
+                    '<path d="M265 1180h180M555 1180h180" stroke="#8B8B8B" stroke-width="2"/>' +
+                    '<text x="355" y="1220" text-anchor="middle" fill="#8B8B8B" font-family="Arial,sans-serif" font-size="18">Instructor</text>' +
+                    '<text x="645" y="1220" text-anchor="middle" fill="#8B8B8B" font-family="Arial,sans-serif" font-size="18">Date</text></svg>';
+                return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+            };
+
+            // Replace each placeholder src with the final optimized certificate image path.
+            const certificateImages = [
+                { src: placeholder('Modern Pastry', 'Advanced European confectionery techniques', '01'), alt: 'Certificate in modern European pastry techniques awarded to Anna' },
+                { src: placeholder('Cake Design', 'Composition, structure, and refined decoration', '02'), alt: 'Certificate in professional cake design and decoration awarded to Anna' },
+                { src: placeholder('Chocolate Art', 'Tempering, molding, and artisan finishes', '03'), alt: 'Certificate in artisan chocolate techniques awarded to Anna' },
+                { src: placeholder('French Pâtisserie', 'Classic methods and contemporary presentation', '04'), alt: 'Certificate in French pâtisserie methods awarded to Anna' },
+                { src: placeholder('Dessert Styling', 'Editorial presentation and visual storytelling', '05'), alt: 'Certificate in editorial dessert styling awarded to Anna' },
+                { src: placeholder('Fine Confectionery', 'Precision, balance, and modern flavor pairing', '06'), alt: 'Certificate in fine confectionery and modern flavor pairing awarded to Anna' }
+            ];
+
+            const carousel = document.querySelector('.certificate-carousel');
+            const track = carousel.querySelector('.certificate-track');
+            const viewport = carousel.querySelector('.certificate-viewport');
+            const prev = carousel.querySelector('.certificate-arrow--prev');
+            const next = carousel.querySelector('.certificate-arrow--next');
+            const dots = carousel.querySelector('.certificate-dots');
+            const lightbox = document.querySelector('.certificate-lightbox');
+            const dialog = lightbox.querySelector('.certificate-lightbox-dialog');
+            const largeImage = lightbox.querySelector('img');
+            const closeButton = lightbox.querySelector('.certificate-lightbox-close');
+            let index = 0;
+            let touchStart = 0;
+            let touchDelta = 0;
+            let lastFocus = null;
+
+            const openLightbox = certificate => {
+                lastFocus = document.activeElement;
+                largeImage.src = certificate.src;
+                largeImage.alt = certificate.alt;
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                closeButton.focus();
+            };
+
+            certificateImages.forEach((certificate, itemIndex) => {
+                const slide = document.createElement('div');
+                slide.className = 'certificate-slide';
+                slide.setAttribute('role', 'group');
+                slide.setAttribute('aria-roledescription', 'slide');
+                slide.setAttribute('aria-label', (itemIndex + 1) + ' of ' + certificateImages.length);
+                const button = document.createElement('button');
+                button.className = 'certificate-card';
+                button.type = 'button';
+                button.setAttribute('aria-label', 'Open larger image: ' + certificate.alt);
+                const image = document.createElement('img');
+                image.src = certificate.src;
+                image.alt = certificate.alt;
+                image.loading = 'lazy';
+                image.decoding = 'async';
+                button.appendChild(image);
+                button.addEventListener('click', () => openLightbox(certificate));
+                slide.appendChild(button);
+                track.appendChild(slide);
+            });
+
+            const visible = () => window.innerWidth <= 560 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+            const maximum = () => Math.max(0, certificateImages.length - visible());
+
+            const update = () => {
+                index = Math.min(index, maximum());
+                track.style.transform = 'translateX(-' + (index * (100 / visible())) + '%)';
+                prev.disabled = index === 0;
+                next.disabled = index === maximum();
+                Array.from(dots.children).forEach((dot, dotIndex) => {
+                    dot.setAttribute('aria-current', dotIndex === index ? 'true' : 'false');
+                });
+            };
+
+            const buildDots = () => {
+                dots.innerHTML = '';
+                for (let dotIndex = 0; dotIndex <= maximum(); dotIndex += 1) {
+                    const dot = document.createElement('button');
+                    dot.className = 'certificate-dot';
+                    dot.type = 'button';
+                    dot.setAttribute('aria-label', 'Go to certificate position ' + (dotIndex + 1));
+                    dot.addEventListener('click', () => { index = dotIndex; update(); });
+                    dots.appendChild(dot);
+                }
+            };
+
+            const move = direction => { index = Math.max(0, Math.min(maximum(), index + direction)); update(); };
+            prev.addEventListener('click', () => move(-1));
+            next.addEventListener('click', () => move(1));
+            carousel.addEventListener('keydown', event => {
+                if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
+                if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
+            });
+            viewport.addEventListener('touchstart', event => { touchStart = event.touches[0].clientX; touchDelta = 0; }, { passive: true });
+            viewport.addEventListener('touchmove', event => { touchDelta = event.touches[0].clientX - touchStart; }, { passive: true });
+            viewport.addEventListener('touchend', () => { if (Math.abs(touchDelta) > 48) move(touchDelta < 0 ? 1 : -1); });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                largeImage.src = '';
+                if (lastFocus) lastFocus.focus();
+            };
+            closeButton.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', event => { if (!dialog.contains(event.target)) closeLightbox(); });
+            document.addEventListener('keydown', event => { if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox(); });
+            window.addEventListener('resize', () => { buildDots(); update(); });
+
+            buildDots();
+            update();
+        })();
+    </script>
 
 </body>
 </html>
